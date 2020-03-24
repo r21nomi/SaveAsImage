@@ -7,6 +7,47 @@
 </head>
 <body>
 <script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
+
+<script type="application/processing">
+            int canvasWidth = 5236;
+            int canvasHeight = 5236;
+            int counter = 0;
+            int frame = 100;
+            var timer;
+
+            void setup() {
+                size(canvasWidth, canvasHeight);
+
+                window.document.onkeydown = function(event){
+                    if (event.key === 'Enter') {
+                        onSaveAsImage("app");
+                    }
+                }
+                startTimer();
+            }
+
+            void draw1() {
+                fill(random() * 255, random() * 255, random() * 255);
+                ellipse(width / 2, height / 2, width * 0.8, height * 0.8);
+            }
+
+            void startTimer() {
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(function(){
+                    draw1();
+
+                    if (counter < frame) {
+                        startTimer();
+                        counter++;
+                    } else {
+                        console.log("complete!!!");
+                    }
+                }, 5);
+            }
+</script>
 
 <canvas id="app"></canvas>
 </body>
