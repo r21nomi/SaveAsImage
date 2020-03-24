@@ -10,10 +10,13 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
 
 <script type="application/processing">
+            // Modifiable --------------------------
             int canvasWidth = 5236;
             int canvasHeight = 5236;
+            int frame = 100;  // how many frames could be drawn
+            // -------------------------------------
+
             int counter = 0;
-            int frame = 100;
             var timer;
 
             void setup() {
@@ -28,6 +31,7 @@
             }
 
             void draw1() {
+                // Modify code here
                 fill(random() * 255, random() * 255, random() * 255);
                 ellipse(width / 2, height / 2, width * 0.8, height * 0.8);
             }
