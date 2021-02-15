@@ -1,7 +1,5 @@
 # Save As Image
-Codes for saving image from canvas.
+Codes for saving image from several types.
 
-
-## How to save
-- press `Enter` key to export canvas as image
-- right mouse button click and save it
+- [Canvas](/canvas)
+- [GLSL](/glsl)
